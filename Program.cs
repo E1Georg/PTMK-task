@@ -186,6 +186,17 @@ void checkTimelineTask5()
             var persons = data.Where(x => x.gender == "male").Where(y => y.lastName.StartsWith("F")).ToList();
             stopwatch.Stop();
 
+            Console.WriteLine("======= Лист данных =======");
+            foreach (var item in persons)
+            {
+                Console.WriteLine("Фамилия: " + item.lastName);
+                Console.WriteLine("Имя: " + item.firstName);
+                Console.WriteLine("Отчество: " + item.patronymic);
+                Console.WriteLine("Дата рождения: " + item.wasBorn);
+                Console.WriteLine("Пол: " + item.gender);                
+                Console.WriteLine("================================");
+            }
+
             Console.WriteLine($"Данные были успешно получены, время выполнения запроса(Task 5) составило: {stopwatch.ElapsedMilliseconds} ms");            
         }
     }
